@@ -1,0 +1,11 @@
+lines = [input().split(' ! ') for _ in range(int(input()))]
+check = input()
+for line in lines:
+    checked = []
+    for number in line:
+        if set(number) & set(check) == set() and int(number) > int(line[0]):
+            checked.append(int(number))
+    if checked:
+        print(min(checked))
+    else:
+        print()
