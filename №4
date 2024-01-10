@@ -1,0 +1,24 @@
+n = input().upper()
+paths = {}
+delete = []
+while n != '':
+    paths[n] = ''
+    n = input().upper()
+numbs = [int(input()) for i in range(int(input()))]
+for path in paths:
+    checked = []
+    max_un = 0
+    for numb in numbs:
+        if (set(str(numb)) & set(str(len(path))) != set() 
+            and len(set(str(numb)) 
+                    & set(str(len(path)))) == len(set(str(len(path))))):
+            checked.append(int(numb))
+    if checked:
+        paths[path] = max(checked)
+    else:
+        delete.append(path)
+for i in delete:
+    del paths[i]
+print('{')
+print(',\n'.join(['  "' + key + '": ' + str(value) for key, value in paths.items()])) 
+print('}')
