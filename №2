@@ -1,0 +1,13 @@
+check = int(input())
+terrible = set()
+half_terr = set()
+for i in range(int(input())):
+    n = int(input())
+    if n % check == 0 and n % 3 != 0:
+        terrible.add(n)
+    elif n % check != 0 and n % 4 == 0:
+        half_terr.add(n)
+print('Ужасные: ', end='')
+print(*terrible, sep='_')
+print('Полуужасные: ', end='')
+print(*half_terr, sep='_')
