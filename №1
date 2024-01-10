@@ -1,0 +1,10 @@
+st = input().lower()
+total_s = 0
+total = 0
+while st != 'morning':
+    if 'shadow' in st:
+        total_s += len(st)
+    else:
+        total += len(st)
+    st = input().lower()
+print(total_s, total, total_s + total)
